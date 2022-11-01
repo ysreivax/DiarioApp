@@ -46,7 +46,7 @@
     .div4home{
         margin-top: 1cm;
         margin-bottom: 2cm;
-        margin-left: 5cm;
+        margin-left: 9cm;
         margin-right: 2cm;
     }
 
@@ -107,7 +107,7 @@
 
     .divcadas1{
         margin-top: 2cm;
-        margin-bottom: 3cm;
+        margin-bottom: 6cm;
         margin-left: 6cm;
         margin-right: 6cm;
     }
@@ -120,17 +120,24 @@
     .cadasp1{
         color: blue;
         font-family: Arial black;
+        font-size: 20px;
 
     }
 
     .cadasp2{
         color: red;
         font-family: Arial black;
+        font-size: 20px;
     }
     
     .cadasp3{
         color: green;
         font-family: Arial black;
+        font-size: 20px;
+    }
+
+    .divedit1{
+        margin-bottom: 10cm;
     }
 
  /* ----------------------------------------- FIM DO CSS DA VALIDAÇÃO ------------------------------------------- */
@@ -146,6 +153,14 @@
 
 /* <><><><><><><><><><><><><><><><><><><><><> CONSULTAR DO DIÁRIO <><><><><><><><><><><><><><><><><><><><><><> */
 
+
+.pesquisar {
+
+    float: right;
+
+    margin: 2%;
+
+}
 
     /* ----------------------------------------- CSS DO EDITAR ------------------------------------------- */
 

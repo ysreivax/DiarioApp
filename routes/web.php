@@ -25,5 +25,9 @@ Route::get('/',[HomeController::class,'MostrarHome'])->name('home');
 Route::get('/cadastrar',[CadastrarController::class,'MostrarCadastro'])->name('cadastrar');
 Route::get('/alterar',[AlterarController::class,'MostrarAlteracao'])->name('alterar');
 Route::post('/cadastrar',[CadastrarController::class,'SalvarBanco'])->name('salvar-banco');
-Route::delete('/editar-diario/{registrosDiario}',[AlterarController::class,'ApagarBancoDiario'])->name('apagar-diario');
+Route::delete('/editar-diarios/{registrosDiarios}',[AlterarController::class,'ApagarBancoDiario'])->name('apagar-diario');
 Route::post('/cadastrar-diario',[AlterarController::class,'SalvarBancoDiario'])->name('salvar-banco-diario');
+Route::get('/alterar-diario/{registrosDiarios}',[AlterarController::class,'MostrarAlterarDiario'])->name('alterar-diario');
+Route::put('/editar-diario/{registrosDiarios}',[AlterarController::class,'AlterarBancoDiario'])->name('alterar-banco-diario');
+
+Route::get('/editar-diario',[AlterarController::class,'MostrarEditarDiario'])->name('editar-diario');

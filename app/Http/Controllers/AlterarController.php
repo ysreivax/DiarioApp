@@ -16,11 +16,50 @@ class AlterarController extends Controller
 
 
 
-    public function ApagarBancoDiario(diario $registrosDiario){
-        $registrosDiario->delete();
+    public function ApagarBancoDiario(diario $registrosDiarios){
+        $registrosDiarios->delete();
 
-       return Redirect::route('editar-diario');
+       return Redirect::route('alterar');
 
     }
+
+    public function MostrarAlterarDiario(diario $registrosDiarios){
+
+        return view('editarPagina',['registrosDiarios' => $registrosDiarios]);
+    }
+
+    public function AlterarBancoDiario(diario $registrosDiarios, Request $request ){
+        $banco = $request->validate([
+            'data' => 'string|required',
+            'tema' => 'string|required',
+            'acontecimento' => 'string|required',
+        ]);
+
+            $registrosDiarios->fill($banco);
+            $registrosDiarios->save();
+            //dd($registrosDiarios);
+
+            return Redirect::route('alterar');
+    
+    }
+
+
+
+
+    public function MostrarEditarDiario(Request $request){
+
+        //$dadosDiario = diario::all();
+       //dd($dadosDiario);
+       $dadosDiario = diario::query();
+       $dadosDiario->when($request->tema,function($query, $vl){
+           $query->where('tema','like','%'.$vl.'%');           
+   });
+
+       $dadosDiario = $dadosDiario->get();
+
+       return view('alterarPagina',['registrosDiario' => $dadosDiario]);
+
+   }
+
 
 }
